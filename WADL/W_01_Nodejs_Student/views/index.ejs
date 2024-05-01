@@ -1,0 +1,86 @@
+<!-- index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Student Marks</title>
+  </head>
+  <style>
+    table,
+    th,
+    td {
+      border-collapse: collapse;
+      padding: 10px;
+      margin: 10px;
+    }
+  </style>
+  <body>
+    <center>
+      <h1>Enter Student Marks</h1>
+      <form method="post" action="/addStudent">
+        <table border="2px" style="padding: 12px">
+          <tr>
+            <td>
+              <p>Enter Student Name</p>
+            </td>
+            <td>
+              <input type="text" name="name" required />
+              <!-- Add name attribute -->
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>Enter Student Roll No</p>
+            </td>
+            <td>
+              <input type="number" name="rollno" required />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>Enter WAD Marks</p>
+            </td>
+            <td>
+              <input type="number" name="wad_marks" required />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>Enter DSBDA Marks</p>
+            </td>
+            <td>
+              <input type="number" name="dsbda_marks" required />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>Enter CNS Marks</p>
+            </td>
+            <td>
+              <input type="number" name="cns_marks" required />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>Enter CC Marks</p>
+            </td>
+            <td>
+              <input type="number" name="cc_marks" required />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>Enter AI Marks</p>
+            </td>
+            <td>
+              <input type="number" name="ai_marks" required />
+            </td>
+          </tr>
+        </table>
+        <input type="submit" value="Submit" />
+      </form>
+    </center>
+  </body>
+</html>

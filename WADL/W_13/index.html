@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PICT Mobile Website</title>
+    <!-- jQuery Mobile CSS -->
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <!-- jQuery Library -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- jQuery Mobile JS -->
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+
+<!-- Home Page -->
+<div data-role="page" id="home">
+    <div data-role="header">
+        <h1>PICT</h1>
+    </div>
+
+    <div data-role="main" class="ui-content">
+        <p>Welcome to Pune Institute of Computer Technology (PICT).</p>
+        <p>Explore our courses, facilities, and more.</p>
+        <a href="#courses" class="ui-btn">View Courses</a>
+        <a href="#facilities" class="ui-btn">Facilities</a>
+    </div>
+
+    <div data-role="footer">
+        <h4>© 2024 PICT. All rights reserved.</h4>
+    </div>
+</div>
+
+<!-- Courses Page -->
+<div data-role="page" id="courses">
+    <div data-role="header">
+        <a href="#home" class="ui-btn ui-icon-home ui-btn-icon-left">Home</a>
+        <h1>Courses</h1>
+    </div>
+
+    <div data-role="main" class="ui-content">
+        <h2>Our Courses</h2>
+        <p>We offer various undergraduate and postgraduate courses in computer science and related fields.</p>
+        <ul data-role="listview" data-inset="true">
+            <li><a href="#">Computer Engineering</a></li>
+            <li><a href="#">Information Technology</a></li>
+            <li><a href="#">Electronics and Telecommunication</a></li>
+            <li><a href="#">Artificial Intelligence</a></li>
+        </ul>
+    </div>
+
+    <div data-role="footer">
+        <h4>© 2024 PICT. All rights reserved.</h4>
+    </div>
+</div>
+
+<!-- Facilities Page -->
+<div data-role="page" id="facilities">
+    <div data-role="header">
+        <a href="#home" class="ui-btn ui-icon-home ui-btn-icon-left">Home</a>
+        <h1>Facilities</h1>
+    </div>
+
+    <div data-role="main" class="ui-content">
+        <h2>Our Facilities</h2>
+        <p>We provide state-of-the-art facilities for our students and faculty members.</p>
+        <ul data-role="listview" data-inset="true">
+            <li><a href="#">Library</a></li>
+            <li><a href="#">Computer Labs</a></li>
+            <li><a href="#">Sports Facilities</a></li>
+            <li><a href="#">Hostel Accommodation</a></li>
+        </ul>
+    </div>
+
+    <div data-role="footer">
+        <h4>© 2024 PICT. All rights reserved.</h4>
+    </div>
+</div>
+
+</body>
+</html>

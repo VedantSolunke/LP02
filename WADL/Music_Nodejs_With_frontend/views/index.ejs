@@ -1,0 +1,53 @@
+<!-- index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    table,
+    td {
+      padding: 10px;
+      margin: 10px;
+    }
+  </style>
+  <body>
+    <center>
+      <h1>Add Song Details</h1>
+
+      <form action="/addSong" method="post">
+        <table border="1px">
+          <tr>
+            <td>Enter Song Name</td>
+            <td><input type="text" name="songName" /></td>
+            <!-- Added name attribute -->
+          </tr>
+          <tr>
+            <td>Enter Film Name</td>
+            <td><input type="text" name="film" /></td>
+            <!-- Added name attribute -->
+          </tr>
+          <tr>
+            <td>Enter Director Name</td>
+            <td><input type="text" name="director" /></td>
+            <!-- Added name attribute -->
+          </tr>
+          <tr>
+            <td>Enter Singer Name</td>
+            <td><input type="text" name="singer" /></td>
+            <!-- Added name attribute -->
+          </tr>
+          <tr>
+            <td colspan="2">
+              <center><button type="submit">Submit</button></center>
+            </td>
+            <!-- Moved the button inside a td tag -->
+          </tr>
+        </table>
+      </form>
+    </center>
+  </body>
+</html>

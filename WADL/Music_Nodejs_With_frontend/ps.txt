@@ -1,0 +1,10 @@
+W8) Perform following tasks using nodejs, Expressjs and MongoDB. Following operation should be performed in Nodejs and Expressjs only.
+a) Create a Database called music
+b) Create a collection called song details
+c) Insert array of 5 song documents in above Collection. [Document should have following field: Songname, Film, Music_director, singer]
+d) Display total count of documents and List all the documents in the browser.
+e) List specified Music Director songs.
+f) List specified Music Director songs sung by specified Singer g) Delete the song which you don’t like.
+h) Add a new song which is your favorite.
+i) List Songs sung by Specified Singer from specified films.
+j) Update the document by adding Actor and Actress name. k) Display the above data in Browser in tabular format.

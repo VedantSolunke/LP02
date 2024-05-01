@@ -1,0 +1,135 @@
+<html>
+  <head>
+    <title>Swipe Image Position</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"
+    />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hammerjs"></script>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: white;
+        border-color: #e983d8;
+      }
+
+      #container {
+        position: relative;
+      }
+
+      #image {
+        display: block;
+        margin: 0 auto;
+        width: 20%;
+        transition: all 0.5s;
+        position: relative;
+        top: 100px;
+      }
+
+      .button {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        border: 2px solid;
+        border-radius: 10px;
+        background-color: #f9b4f6;
+        border-color: black;
+        cursor: pointer;
+        font-size: 24px;
+      }
+
+      #up {
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 10%;
+      }
+
+      #down {
+        top: 330px;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 10%;
+      }
+
+      #left {
+        top: 95%;
+        left: 10px;
+        transform: translateY(-50%);
+        width: 10%;
+      }
+
+      #right {
+        top: 95%;
+        right: 10px;
+        transform: translateY(-50%);
+        width: 10%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <!-- <img
+        id="image"
+        src="https://img.freepik.com/free-photo/vibrant-colors-nature-close-up-wet-purple-daisy-generated-by-artificial-intellingence_25030-63819.jpg?size=626&ext=jpg&ga=GA1.1.735520172.1710201600&semt=ais"
+      /> -->
+      <img src="three.jpg" alt="" id="image" />
+      <button id="up" class="button">&#9650;</button>
+      <button id="down" class="button">&#9660;</button>
+      <button id="left" class="button">&#9668;</button>
+      <button id="right" class="button">&#9658;</button>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        var container = document.getElementById("container");
+        var image = document.getElementById("image");
+
+        var hammertime = new Hammer(container);
+        hammertime.get("swipe").set({ direction: Hammer.DIRECTION_ALL });
+
+        hammertime.on("swipeup", function () {
+          $(image).animate({ top: "-=50px" }, "fast");
+        });
+
+        hammertime.on("swipedown", function () {
+          $(image).animate({ top: "+=50px" }, "fast");
+        });
+
+        hammertime.on("swipeleft", function () {
+          $(image).animate({ left: "-=50px" }, "fast");
+        });
+
+        hammertime.on("swiperight", function () {
+          $(image).animate({ left: "+=50px" }, "fast");
+        });
+
+        // Button Click Handlers
+        $("#up").on("click", function () {
+          $(image).animate({ top: "-=50px" }, "fast");
+        });
+
+        $("#down").on("click", function () {
+          $(image).animate({ top: "+=50px" }, "fast");
+        });
+
+        $("#left").on("click", function () {
+          $(image).animate({ left: "-=50px" }, "fast");
+        });
+
+        $("#right").on("click", function () {
+          $(image).animate({ left: "+=50px" }, "fast");
+        });
+      });
+    </script>
+  </body>
+</html>

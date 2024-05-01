@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Website</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom CSS styles */
+        .jumbotron {
+            background-color: #f8f9fa;
+            padding: 3rem;
+            margin-bottom: 0;
+        }
+
+        .toppers-card {
+            margin-top: 20px;
+        }
+
+        @media (min-width: 768px) {
+            .toppers-card {
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .topper-card {
+                flex: 1 0 45%; /* Two cards per row */
+                margin-right: 10px;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">College Website</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="display-4">Welcome to Our College Website</h1>
+            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus rhoncus urna ut velit facilisis, eu faucibus nulla scelerisque.</p>
+        </div>
+
+        <!-- Toppers Data Statistics Section -->
+        <div class="toppers-card">
+            <div class="card topper-card">
+                <div class="card-body">
+                    <h5 class="card-title">2021 Toppers</h5>
+                    <p class="card-text">Toppers: John Doe, Jane Doe</p>
+                </div>
+            </div>
+            <div class="card topper-card">
+                <div class="card-body">
+                    <h5 class="card-title">2020 Toppers</h5>
+                    <p class="card-text">Toppers: Alice Smith, Bob Johnson</p>
+                </div>
+            </div>
+            <div class="card topper-card">
+                <div class="card-body">
+                    <h5 class="card-title">2019 Toppers</h5>
+                    <p class="card-text">Toppers: Emily Brown, Michael Wilson</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS (optional) -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

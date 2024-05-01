@@ -1,0 +1,66 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      background-color: antiquewhite;
+    }
+    td,
+    th {
+      padding: 10px;
+    }
+  </style>
+  <body>
+    <center>
+      <div>
+        <h1>List of Users</h1>
+
+        <table border="1px">
+          <thead>
+            <tr>
+              <th>SR no</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Phone no.</th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+
+      <div>
+        <h1>Registration Form</h1>
+
+        <form id="registrationForm">
+          <input
+            type="text"
+            name="name"
+            placeholder="Enter your name"
+            id="name"
+          /><br />
+          <input
+            type="text"
+            name="email"
+            placeholder="Enter your email"
+            id="email"
+          /><br />
+          <input
+            type="number"
+            name="number"
+            placeholder="Enter your number"
+            id="phone"
+          /><br />
+
+          <input type="button" value="Submit" id="btn-submit" />
+        </form>
+      </div>
+    </center>
+    <script src="script.js"></script>
+  </body>
+</html>

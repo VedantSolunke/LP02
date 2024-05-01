@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Database Frontend</title>
+</head>
+<body>
+    <h1>Music Database</h1>
+    
+    <h2>Total Count of Documents</h2>
+    <p id="totalCount"></p>
+
+    <h2>List of Songs</h2>
+    <ul id="songList"></ul>
+
+    <h2>List of Songs by Music Director</h2>
+    <label for="directorInput">Enter Music Director Name:</label>
+    <input type="text" id="directorInput">
+    <button onclick="getSongsByDirector()">Get Songs</button>
+    <ul id="directorSongs"></ul>
+
+    <h2>List of Songs by Music Director and Singer</h2>
+    <label for="directorInput2">Enter Music Director Name:</label>
+    <input type="text" id="directorInput2">
+    <label for="singerInput">Enter Singer Name:</label>
+    <input type="text" id="singerInput">
+    <button onclick="getSongsByDirectorAndSinger()">Get Songs</button>
+    <ul id="directorSingerSongs"></ul>
+
+    <h2>Delete Song</h2>
+    <label for="deleteInput">Enter Song Name to Delete:</label>
+    <input type="text" id="deleteInput">
+    <button onclick="deleteSong()">Delete Song</button>
+
+    <h2>Add New Song</h2>
+    <label for="songNameInput">Song Name:</label>
+    <input type="text" id="songNameInput">
+    <label for="filmInput">Film:</label>
+    <input type="text" id="filmInput">
+    <label for="musicDirectorInput">Music Director:</label>
+    <input type="text" id="musicDirectorInput">
+    <label for="singerInput2">Singer:</label>
+    <input type="text" id="singerInput2">
+    <label for="actorInput">Actor (optional):</label>
+    <input type="text" id="actorInput">
+    <label for="actressInput">Actress (optional):</label>
+    <input type="text" id="actressInput">
+    <button onclick="addSong()">Add Song</button>
+
+    <h2>List of Songs by Singer from Specified Film</h2>
+    <label for="filmInput2">Enter Film Name:</label>
+    <input type="text" id="filmInput2">
+    <label for="singerInput3">Enter Singer Name:</label>
+    <input type="text" id="singerInput3">
+    <button onclick="getSongsBySingerAndFilm()">Get Songs</button>
+    <ul id="singerFilmSongs"></ul>
+
+    <h2>Update Song</h2>
+    <label for="updateInput">Enter Song Name to Update:</label>
+    <input type="text" id="updateInput">
+    <label for="actorInput2">Actor Name:</label>
+    <input type="text" id="actorInput2">
+    <label for="actressInput2">Actress Name:</label>
+    <input type="text" id="actressInput2">
+    <button onclick="updateSong()">Update Song</button>
+
+    <h2>Tabular Format</h2>
+    <div id="tabularData"></div>
+
+    <script>
+        const url = 'http://localhost:3000';
+
+        async function getTotalCount() {
+            const response = await fetch(`${url}/total`);
+            const data = await response.text();
+            document.getElementById('totalCount').innerText = data;
+        }
+
+        async function getAllSongs() {
+            const response = await fetch(`${url}/list`);
+            const data = await response.json();
+            const songList = document.getElementById('songList');
+            songList.innerHTML = '';
+            data.forEach(song => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `${song.Songname} - ${song.Film} (${song.Music_director})`;
+                songList.appendChild(listItem);
+            });
+        }
+
+        async function getSongsByDirector() {
+            const director = document.getElementById('directorInput').value;
+            const response = await fetch(`${url}/musicdirector/${director}`);
+            const data = await response.json();
+            const directorSongs = document.getElementById('directorSongs');
+            directorSongs.innerHTML = '';
+            data.forEach(song => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `${song.Songname} - ${song.Film}`;
+                directorSongs.appendChild(listItem);
+            });
+        }
+
+        async function getSongsByDirectorAndSinger() {
+            const director = document.getElementById('directorInput2').value;
+            const singer = document.getElementById('singerInput').value;
+            const response = await fetch(`${url}/musicdirector/${director}/singer/${singer}`);
+            const data = await response.json();
+            const directorSingerSongs = document.getElementById('directorSingerSongs');
+            directorSingerSongs.innerHTML = '';
+            data.forEach(song => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `${song.Songname} - ${song.Film}`;
+                directorSingerSongs.appendChild(listItem);
+            });
+        }
+
+        async function deleteSong() {
+            const songName = document.getElementById('deleteInput').value;
+            const response = await fetch(`${url}/delete/${songName}`, { method: 'DELETE' });
+            alert(await response.text());
+            // Refresh the list of songs after deletion
+            getAllSongs();
+        }
+
+        async function addSong() {
+            const songName = document.getElementById('songNameInput').value;
+            const film = document.getElementById('filmInput').value;
+            const musicDirector = document.getElementById('musicDirectorInput').value;
+            const singer = document.getElementById('singerInput2').value;
+            const actor = document.getElementById('actorInput').value;
+            const actress = document.getElementById('actressInput').value;
+            const response = await fetch(`${url}/add`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ Songname: songName, Film: film, Music_director: musicDirector, singer: singer, Actor: actor, Actress: actress })
+            });
+            alert(await response.text());
+            // Refresh the list of songs after addition
+            getAllSongs();
+        }
+
+        async function getSongsBySingerAndFilm() {
+            const film = document.getElementById('filmInput2').value;
+            const singer = document.getElementById('singerInput3').value;
+            const response = await fetch(`${url}/film/${film}/singer/${singer}`);
+            const data = await response.json();
+            const singerFilmSongs = document.getElementById('singerFilmSongs');
+            singerFilmSongs.innerHTML = '';
+            data.forEach(song => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `${song.Songname} - ${song.Film}`;
+                singerFilmSongs.appendChild(listItem);
+            });
+        }
+
+        async function updateSong() {
+            const songName = document.getElementById('updateInput').value;
+            const actor = document.getElementById('actorInput2').value;
+            const actress = document.getElementById('actressInput2').value;
+            const response = await fetch(`${url}/update/${songName}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ Actor: actor, Actress: actress })
+            });
+            alert(await response.text());
+            // Refresh the list of songs after update
+            getAllSongs();
+        }
+
+        async function displayTabularData() {
+            const response = await fetch(`${url}/tabular`);
+            const data = await response.text();
+            document.getElementById('tabularData').innerHTML = data;
+        }
+
+        // Call functions to populate data on page load
+        getTotalCount();
+        getAllSongs();
+        displayTabularData();
+    </script>
+</body>
+</html>

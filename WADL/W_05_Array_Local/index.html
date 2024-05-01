@@ -1,0 +1,133 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <style>
+    h1 {
+      color: red;
+    }
+    body {
+      background-color: beige;
+    }
+    table {
+      padding: 10px;
+      border-collapse: collapse;
+    }
+    td {
+      padding: 1rem;
+      font-size: larger;
+      background-color: white;
+    }
+
+    button {
+      background-color: green;
+      color: white;
+      padding: 10px;
+      width: 100px;
+      border-radius: 20px;
+    }
+  </style>
+  <body>
+    <center>
+      <h1>User Registration</h1>
+
+      <form action="./userList.html" id="form">
+        <table border="1px">
+          <tr>
+            <td>Enter Name</td>
+            <td><input type="text" name="" id="name" required /></td>
+          </tr>
+          <tr>
+            <td>Enter Email</td>
+            <td><input type="email" name="" id="email" required /></td>
+          </tr>
+          <tr>
+            <td>Enter Password</td>
+            <td><input type="password" name="" id="password" required /></td>
+          </tr>
+
+          <tr>
+            <td>Gender</td>
+            <td>
+              <input type="radio" name="gender" id="male" value="Male" /> Male
+              <input type="radio" name="gender" id="female" value="Female" />
+              Female
+            </td>
+          </tr>
+          <tr>
+            <td>Age</td>
+            <td><input type="number" name="age" id="age" required /></td>
+          </tr>
+
+          <tr>
+            <td>Enter City:</td>
+            <td>
+              <select name="city" id="city">
+                <option value="select" selected>Select</option>
+                <option value="Pune">Pune</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Nagpur">Nagpur</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>D.O.B</td>
+            <td><input type="date" name="dob" id="date" /></td>
+          </tr>
+          <tr>
+            <td colspan="2" style="text-align: center">
+              <button type="reset" style="background-color: red">Reset</button>
+              <button type="submit">Submit</button>
+            </td>
+          </tr>
+        </table>
+      </form>
+      <a href="./userList.html"
+        ><button style="margin-top: 10px; background-color: blue">
+          UserList
+        </button></a
+      >
+    </center>
+  </body>
+
+  <script>
+    document.getElementById("form").addEventListener("submit", handleSubmit);
+    function handleSubmit(e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const age = document.getElementById("age").value;
+      const dob = document.getElementById("date").value;
+      const citySelect = document.getElementById("city");
+
+      const seletedCity = citySelect.options[citySelect.selectedIndex].value;
+      const gender = document.querySelector(
+        "input[name='gender']:checked"
+      ).value;
+
+      const user = {
+        name,
+        email,
+        age,
+        gender,
+        dob,
+        seletedCity,
+      }
+
+      var users = JSON.parse(localStorage.getItem("users")) || [];
+
+      users.push(user);
+      console.log(users);
+
+      localStorage.setItem("users", JSON.stringify(users));
+      window.location.href = "userList.html";
+    }
+  </script>
+</html>

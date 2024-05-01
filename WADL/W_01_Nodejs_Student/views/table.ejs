@@ -1,0 +1,90 @@
+<!-- table.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    table,
+    td,
+    th {
+      padding: 10px;
+      border-collapse: collapse;
+      text-align: center  ;
+    }
+
+    th,
+    td {
+      width: 100px;
+    }
+  </style>
+  <body>
+    <h1>Total Count of Students: <%= totalCount %></h1>
+
+    <div>
+      <form action="/" method="get">
+        <button type="submit">Add New</button>
+      </form>
+    </div>
+
+    <br />
+
+    <% if(student != null) { %>
+    <table border="1px">
+      <tr>
+        <th>Name</th>
+        <th>Roll no</th>
+        <th>WAD</th>
+        <th>DSBDA</th>
+        <th>CNS</th>
+        <th>AI</th>
+        <th>CC</th>
+        <th>Actions</th>
+      </tr>
+
+      <% student.forEach(function(item){%>
+
+      <tr>
+        <td><%=item.name%></td>
+
+        <td><%=item.rollno%></td>
+
+        <td><%=item.wad_marks%></td>
+
+        <td><%=item.dsbda_marks%></td>
+
+        <td><%=item.cns_marks%></td>
+
+        <td><%=item.cc_marks%></td>
+
+        <td><%=item.ai_marks%></td>
+
+        <td>
+          <form action="/deleteStudent/<%= item._id %>" method="post">
+            <button type="submit">Delete</button>
+          </form>
+          <br />
+          <!-- Increment marks by 10 -->
+
+          <form action="/updateMarks/<%= item._id %>" method="post">
+            <input type="hidden" name="marksToUpdate" value="10" />
+            <button type="submit">Increment</button>
+          </form>
+
+          <br />
+          <!-- Decrement marks by 10 -->
+          <form action="/updateMarks/<%= item._id %>" method="post">
+            <input type="hidden" name="marksToUpdate" value="-10" />
+            <button type="submit">Decrement</button>
+          </form>
+        </td>
+      </tr>
+
+      <% }) %>
+    </table>
+    <% } %>
+  </body>
+</html>

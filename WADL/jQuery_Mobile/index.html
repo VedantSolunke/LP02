@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PICT Mobile Website</title>
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <!-- <link
+      rel="stylesheet"
+      href="/jQuery_Mobile/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.css"
+    />
+    <script src="/jQuery_Mobile/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script> -->
+  </head>
+  <body>
+    <!-- Home Page -->
+    <div data-role="page" id="home">
+      <div data-role="header">
+        <h1>PICT</h1>
+      </div>
+
+      <!-- Navbar -->
+      <div data-role="navbar" data-grid="c">
+        <ul>
+          <li>
+            <a href="#home" data-icon="home" class="ui-btn-active">Home</a>
+          </li>
+          <li><a href="#about" data-icon="user">About</a></li>
+          <li><a href="#department" data-icon="grid">Department</a></li>
+          <li><a href="#contact" data-icon="mail">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Content -->
+      <div data-role="content">
+        <h3 style="color: green">Pune Institute of Computer Technology</h3>
+        <p style="text-align: justify">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel iste
+          consequatur sit magni delectus. Consequuntur, iure! Ipsum nulla ut
+          dolore libero similique laudantium. Lorem ipsum dolor sit amet
+          consectetur adipisicing elit. Consequatur nesciunt recusandae,
+          cupiditate eos nulla ea magnam omnis vel iusto ullam reprehenderit
+          voluptate quo, i nostrum ut maiores cum odio tenetur soluta error aut
+          fuga voluptatum, amet temporibus illum aperiam explicabo ipsa qui ad
+          quisquam laudantium obcaecati! Consequuntur, laboriosam rem ducimus in
+          hic, ab corporis, nisi amet doloremque maiores magni sequi pariatur
+          voluptatum commodi quos?
+        </p>
+      </div>
+      <div data-role="content">
+        <h3 style="color: green">Vision</h3>
+        <p style="text-align: justify">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel iste
+          consequatur sit magni delectus. Consequuntur, iure! Ipsum nulla ut
+          dolo
+        </p>
+      </div>
+      <div data-role="content">
+        <h3 style="color: green">Mission</h3>
+        <p style="text-align: justify">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel iste
+          consequatur sit magni delectus. Consequuntur, iure! Ipsum nulla ut
+          dolore libero similique laudantium. Lorem ipsum dolor sit amet
+          consectetur adipisicing elit. Consequat
+        </p>
+      </div>
+
+      <!-- Footer -->
+      <div data-role="footer">
+        <h3>Quick Access</h3>
+        <center>
+          <a href="#home" data-icon="home">Home</a><br />
+          <a href="#about" data-icon="user" data-icon="user">About</a><br />
+          <a href="#department" data-icon="grid">Department</a><br />
+          <a href="#contact" data-icon="mail">Contact</a><br />
+        </center>
+        <h4>&copy; PICT 2024</h4>
+      </div>
+    </div>
+
+    <!-- About Page -->
+    <div data-role="page" id="about">
+      <div data-role="header">
+        <h1>PICT</h1>
+      </div>
+
+      <!-- Navbar -->
+      <div data-role="navbar" data-grid="c">
+        <ul>
+          <li><a href="#home" data-icon="home">Home</a></li>
+          <li>
+            <a
+              href="#about"
+              data-icon="user"
+              data-icon="user"
+              class="ui-btn-active"
+              >About</a
+            >
+          </li>
+          <li><a href="#department" data-icon="grid">Department</a></li>
+          <li><a href="#contact" data-icon="mail">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Content -->
+      <center>
+        <div data-role="content">
+          <div class="row">
+            <img src="./images/image01.jpg" alt="" height="200px" />
+            <img src="./images/image02.jpg" alt="" height="200px" />
+          </div>
+          <div class="row">
+            <img src="./images/image03.jpg" alt="" height="200px" />
+            <img src="./images/image02.jpg" alt="" height="200px" />
+          </div>
+        </div>
+      </center>
+
+      <!-- Footer -->
+      <div data-role="footer">
+        <h3>Quick Access</h3>
+        <center>
+          <a href="#home" data-icon="home">Home</a><br />
+          <a href="#about" data-icon="user" data-icon="user">About</a><br />
+          <a href="#department" data-icon="grid">Department</a><br />
+          <a href="#contact" data-icon="mail">Contact</a><br />
+        </center>
+        <h4>&copy; PICT 2024</h4>
+      </div>
+    </div>
+
+    <!-- Department Page -->
+    <div data-role="page" id="department">
+      <div data-role="header">
+        <h1>PICT</h1>
+      </div>
+
+      <!-- Navbar -->
+      <div data-role="navbar" data-grid="c">
+        <ul>
+          <li><a href="#home" data-icon="home">Home</a></li>
+          <li><a href="#about" data-icon="user" data-icon="user">About</a></li>
+          <li>
+            <a href="#department" data-icon="grid" class="ui-btn-active"
+              >Department</a
+            >
+          </li>
+          <li><a href="#contact" data-icon="mail">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Content -->
+
+      <div data-role="content">
+        <ul data-role="listview">
+          <li><a href="#"> Computer Science</a></li>
+          <li><a href="#"> homermation Technology</a></li>
+          <li><a href="#"> Electronics & Telecommunication</a></li>
+        </ul>
+      </div>
+
+      <!-- Footer -->
+      <div data-role="footer">
+        <h3>Quick Access</h3>
+        <center>
+          <a href="#home" data-icon="home">Home</a><br />
+          <a href="#about" data-icon="user" data-icon="user">About</a><br />
+          <a href="#department" data-icon="grid">Department</a><br />
+          <a href="#contact" data-icon="mail">Contact</a><br />
+        </center>
+        <h4>&copy; PICT 2024</h4>
+      </div>
+    </div>
+
+    <!-- Contact Page -->
+    <div data-role="page" id="contact">
+      <div data-role="header">
+        <h1>PICT</h1>
+      </div>
+
+      <!-- Navbar -->
+      <div data-role="navbar" data-grid="c">
+        <ul>
+          <li><a href="#home" data-icon="home">Home</a></li>
+          <li><a href="#about" data-icon="user" data-icon="user">About</a></li>
+          <li><a href="#department" data-icon="grid">Department</a></li>
+          <li>
+            <a href="#contact" data-icon="mail" class="ui-btn-active"
+              >Contact</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <!-- Content -->
+
+      <div data-role="content">
+        <label for="text-basic">Name</label>
+        <input type="text" name="text-basic" />
+        <label for="text-basic">Email</label>
+        <input type="email" name="text-basic" />
+        <label for="text-basic">Mobile</label>
+        <input type="number" name="text-basic" />
+        <label for="text-basic">Address</label>
+        <input type="text" name="text-basic" />
+        <button type="submit" class="ui-btn-active">Submit</button>
+      </div>
+
+      <!-- Footer -->
+      <div data-role="footer">
+        <h3>Quick Access</h3>
+        <center>
+          <a href="#home" data-icon="home">Home</a><br />
+          <a href="#about" data-icon="user" data-icon="user">About</a><br />
+          <a href="#department" data-icon="grid">Department</a><br />
+          <a href="#contact" data-icon="mail">Contact</a><br />
+        </center>
+        <h4>&copy; PICT 2024</h4>
+      </div>
+    </div>
+  </body>
+</html>

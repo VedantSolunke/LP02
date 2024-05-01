@@ -1,0 +1,1 @@
+W3) Write a JavaScript Program to get the user registration data and push to array/local storage and data list in the new page.

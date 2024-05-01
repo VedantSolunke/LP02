@@ -1,0 +1,18 @@
+{
+  "users": [
+    {
+      "id": "9dd9",
+      "fullname": "qwe",
+      "email": "qwe@qwe.com",
+      "username": "qwe",
+      "password": "1234"
+    },
+    {
+      "id": "c85b",
+      "fullname": "csdcsda",
+      "email": "csd@cas.csa",
+      "username": "cas",
+      "password": "1234"
+    }
+  ]
+}

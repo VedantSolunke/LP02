@@ -1,0 +1,17 @@
+Setting up Angular:
+
+o Install Angular CLI globally if you haven't already:
+    npm install -g @angular/cli
+o Create a new Angular project: 
+    ng new course-enrollment-system
+o Navigate into the project directory: 
+    cd course-enrollment-system
+
+
+ng generate component registration
+ng generate component login
+ng generate component profile
+
+npm install -g json-server
+
+json-server --watch db.json --port 3000

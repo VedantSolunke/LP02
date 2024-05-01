@@ -1,0 +1,68 @@
+<!-- table.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table,
+      th,
+      td {
+        padding: 20px;
+        border-collapse: collapse;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Total Count : <%= totalCount %></h2>
+
+    <form action="/" method="get">
+      <button>Add Songs</button>
+    </form>
+
+    <h1>Song Details</h1>
+
+    <% if (songs != null) { %>
+    <table border="1px">
+      <tr>
+        <th>Song Name</th>
+        <th>Film Name</th>
+        <th>Director Name</th>
+        <th>Singer Name</th>
+        <th>Actor Name</th>
+        <th>Actress Name</th>
+        <th>Actions</th>
+      </tr>
+
+      <% songs.forEach((song) => { %>
+      <tr>
+        <td><%= song.songName %></td>
+        <td><%= song.film %></td>
+        <td><%= song.director %></td>
+        <td><%= song.singer %></td>
+        <td><%= song.actor %></td>
+        <td><%= song.actress %></td>
+
+        <td>
+          <!-- Delete Form -->
+          <form action="/delete/<%= song._id %>" method="post">
+            <button type="submit">Delete</button>
+          </form>
+          <br />
+          <!-- Update Form -->
+          <form action="/update/<%= song._id %>" method="post">
+            <input type="text" name="actor" placeholder="New Actor" />
+            <input type="text" name="actress" placeholder="New Actress" />
+            <button type="submit">Update</button>
+          </form>
+        </td>
+      </tr>
+
+      <% }) %>
+    </table>
+
+    <% } %>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+table th {
+  background-color: black;
+  color: white;
+}
+
+button {
+  padding: 0.5rem;
+  border-radius: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: rgb(0, 115, 255);
+  color: white;
+}
