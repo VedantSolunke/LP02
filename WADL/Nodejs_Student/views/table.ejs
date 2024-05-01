@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <style>
+    table {
+      width: 80%;
+    }
+    table,
+    td,
+    th {
+      border-collapse: collapse;
+      padding: 10px;
+      font-size: medium;
+      text-align: center;
+    }
+    td {
+      font-size: large;
+    }
+    body {
+      background-color: beige;
+    }
+
+    h1 {
+      color: red;
+    }
+
+    td {
+      background-color: white;
+    }
+    th {
+      background-color: black;
+      color: white;
+    }
+
+    button {
+      background-color: blue;
+      color: white;
+      padding: 10px;
+      margin: 2px;
+      border-radius: 20px;
+    }
+  </style>
+  <body>
+    <center>
+      <h1>Total Count is : <%= totalCount %></h1>
+
+      <div>
+        <% if(students != null){ %>
+
+        <table border="1px">
+          <tr>
+            <th>Roll no</th>
+            <th>Name</th>
+            <th>wad_marks</th>
+            <th>cc_marks</th>
+            <th>dsbda_marks</th>
+            <th>cns_marks</th>
+            <th>ai_marks</th>
+            <th>Actions</th>
+          </tr>
+          <% students.forEach(function(ele){ %>
+          <tr>
+            <td><%= ele.rollno%></td>
+            <td><%= ele.name%></td>
+            <td><%= ele.wad_marks%></td>
+            <td><%= ele.cc_marks%></td>
+            <td><%= ele.dsbda_marks%></td>
+            <td><%= ele.cns_marks%></td>
+            <td><%= ele.ai_marks%></td>
+            <td>
+              <form action="/delete/<%= ele._id%>" method="post">
+                <button type="submit" style="background-color: red">
+                  Delete
+                </button>
+              </form>
+              <form action="/update/<%= ele._id%>" method="post">
+                <input type="hidden" name="marksToUpdate" value="10" />
+                <button type="submit" style="background-color: green">
+                  Increment
+                </button>
+              </form>
+              <form action="/update/<%= ele._id%>" method="post">
+                <input type="hidden" name="marksToUpdate" value="-10" />
+                <button
+                  type="submit"
+                  style="background-color: rgb(195, 195, 0)"
+                >
+                  Decrement
+                </button>
+              </form>
+            </td>
+          </tr>
+
+          <%}) %>
+        </table>
+        <%}%>
+      </div>
+      <form action="/" method="get">
+        <button type="submit">Add Student</button>
+      </form>
+    </center>
+  </body>
+</html>
