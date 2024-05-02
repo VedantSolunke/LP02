@@ -1,0 +1,90 @@
+<!-- userList.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      h1 {
+        color: red;
+      }
+      body {
+        background-color: beige;
+      }
+      table {
+        padding: 10px;
+        border-collapse: collapse;
+      }
+      td {
+        padding: 1rem;
+        font-size: larger;
+        background-color: white;
+      }
+      th {
+        background-color: black;
+        padding: 1rem;
+        color: white;
+      }
+
+      button {
+        background-color: green;
+        color: white;
+        padding: 10px;
+        width: 150px;
+        border-radius: 20px;
+        margin-top: 10px;
+      }
+      table button {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <center>
+      <h1>User List</h1>
+      <table border="1px">
+        <thead>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Age</th>
+          <th>Gender</th>
+          <th>City</th>
+          <th>DOB</th>
+          <th>Delete</th>
+        </thead>
+        <tbody id="userlist"></tbody>
+      </table>
+
+      <a href="./index.html"><button>New Registration</button></a>
+    </center>
+  </body>
+
+  <script>
+    var users = JSON.parse(localStorage.getItem("users")) || [];
+    var body = document.getElementById("userlist");
+
+    users.forEach((element, index) => {
+      var row = document.createElement("tr");
+
+      row.innerHTML += `
+      <td>${element.name}</td>
+      <td>${element.email}</td>
+      <td>${element.age}</td>
+      <td>${element.gender}</td>
+      <td>${element.seletedCity}</td>
+      <td>${element.dob}</td>
+      <td><button onclick="deleteUser(${index})">Delete</button></td>
+      `;
+
+      body.appendChild(row);
+    });
+
+    function deleteUser(index) {
+      users.splice(index, 1);
+      localStorage.setItem("users", JSON.stringify(users));
+      location.reload(); // Refresh the page to reflect changes
+    }
+  </script>
+</html>
