@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table,
+      th,
+      td {
+        text-align: center;
+        border-collapse: collapse;
+        padding: 1rem;
+      }
+      td,
+      th {
+        width: 100px;
+      }
+
+      h1 {
+        color: red;
+      }
+      body {
+        background-color: beige;
+      }
+      table {
+        border-collapse: collapse;
+        margin-bottom: 5px;
+      }
+      td {
+        padding: 1rem;
+        background-color: white;
+        font-size: large;
+      }
+      button {
+        padding: 10px;
+        border-radius: 20px;
+        background-color: rgb(8, 116, 193);
+        color: white;
+        width: 100px;
+      }
+
+      th {
+        background-color: black;
+        color: white;
+      }
+      .delete {
+        background-color: red;
+        margin-bottom: 5px;
+      }
+      .add {
+        background-color: green;
+        margin-top: 5px;
+      }
+
+      input[type="text"] {
+        width: 150px;
+      }
+    </style>
+  </head>
+  <body>
+    <center>
+      <h2>Total Count of Document : <%= totalCount%></h2>
+
+      <h1>Song Details</h1>
+
+      <table border="1px">
+        <th>Song Name</th>
+        <th>Film Name</th>
+        <th>Music Director</th>
+        <th>Singer</th>
+        <th>Actor</th>
+        <th>Actress</th>
+        <th>Action</th>
+
+        <% if(songs != null){ %> <%songs.forEach(function(item){%>
+        <tr>
+          <td><%= item.songName%></td>
+          <td><%= item.film%></td>
+          <td><%= item.director%></td>
+          <td><%= item.singer%></td>
+          <td><%= item.actor%></td>
+          <td><%= item.actress%></td>
+          <td>
+            <form action="/delete/<%=item._id%>" method="post">
+              <button type="submit" class="delete">Delete</button>
+            </form>
+            <form action="/update/<%=item._id%>" name="names" method="post">
+              <input type="text" name="actor" placeholder="Actor Name" /><br />
+              <input
+                type="text"
+                name="actress"
+                placeholder="Actress Name"
+              /><br />
+
+              <button type="submit" name="names " class="add">Add</button>
+            </form>
+          </td>
+        </tr>
+
+        <%})%> <%}%>
+      </table>
+
+      <div>
+        <form action="/" method="get">
+          <button type="submit">Add Song</button>
+        </form>
+      </div>
+
+      <div>
+        <h4>List specified Music Director songs.</h4>
+        <form action="/getSongsDirector" method="get">
+          <input type="text" name="director" placeholder="Director Name" />
+          <button type="submit">Show songs</button>
+        </form>
+      </div>
+    </center>
+  </body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      h1 {
+        color: red;
+      }
+      body {
+        background-color: beige;
+      }
+      table {
+        border-collapse: collapse;
+      }
+      td {
+        padding: 1rem;
+        background-color: white;
+      }
+      button {
+        padding: 0.8em;
+        border-radius: 20px;
+        background-color: rgb(8, 116, 193);
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <center>
+      <h1>Add Song Details</h1>
+      <form action="/add" method="post">
+        <table border="2px">
+          <tr>
+            <td>Enter Song Name</td>
+            <td><input type="text" name="songName" id="songName" /></td>
+          </tr>
+          <tr>
+            <td>Enter Film Name</td>
+            <td><input type="text" name="film" id="film" /></td>
+          </tr>
+          <tr>
+            <td>Enter Director Name</td>
+            <td><input type="text" name="director" id="director" /></td>
+          </tr>
+          <tr>
+            <td>Enter Singer Name</td>
+            <td><input type="text" name="singer" id="singer" /></td>
+          </tr>
+          <tr>
+            <td colspan="2" style="text-align: center">
+              <button type="reset" style="background-color: red">Reset</button>
+              <button type="submit" style="background-color: green">
+                Submit
+              </button>
+            </td>
+          </tr>
+        </table>
+      </form>
+
+      <div style="margin-top: 10px">
+        <form action="/getSongs" method="get">
+          <button type="submit">View Songs</button>
+        </form>
+      </div>
+    </center>
+  </body>
+</html>
