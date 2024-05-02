@@ -1,3 +1,23 @@
+Syntax: The basic syntax of the scp command is:
+
+scp [options] [source] [destination]
+
+Transfer: To transfer a file from the source to the destination, use the following command:
+
+scp /path/to/local/file username@destination:/path/to/destination
+
+Replace:
+/path/to/local/file with the path to the file you want to transfer.
+username with the username of the destination system.
+destination with the IP address or hostname of the destination system.
+/path/to/destination with the path on the destination system where you want to save the file.
+
+
+For example:
+
+scp /home/user/documents/example.txt user@192.168.1.100:/home/user/destination/
+
+
 
 vagrant (ubuntu-18.04-amd64-disk001.vmdk): 
 https://drive.google.com/drive/u/0/folders/1me_nJJh0fvdDOXX3ew2jzGQpoP7f_iFt
