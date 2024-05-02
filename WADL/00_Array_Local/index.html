@@ -105,13 +105,34 @@
       const email = document.getElementById("email").value;
       const age = document.getElementById("age").value;
       const dob = document.getElementById("date").value;
-      const citySelect = document.getElementById("city");
 
+      const citySelect = document.getElementById("city");
       const seletedCity = citySelect.options[citySelect.selectedIndex].value;
       const gender = document.querySelector(
         "input[name='gender']:checked"
       ).value;
 
+      // Validation
+      if (!validateName(name) || !validateAge(age)) {
+        return;
+      }
+
+      // Validation functions
+      function validateName(name) {
+        if (/\d/.test(name)) {
+          alert("Name cannot contain numbers.");
+          return false;
+        }
+        return true;
+      }
+
+      function validateAge(age) {
+        if (age < 18) {
+          alert("Age must be above 18.");
+          return false;
+        }
+        return true;
+      }
       const user = {
         name,
         email,
