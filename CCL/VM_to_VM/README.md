@@ -1,3 +1,26 @@
+Cloud
+1) 	Server (File yaat aahe)
+	1)sudo apt install net-tools
+	2)ifconfig -->> inet line 2
+	3)sudo apt install ssh
+	4) sudo systemctl start ssh
+	5)sudo systemcrl status ssh
+	6) scp myfile.txt (reciver_usernname)@(reciever_ip):/download/
+
+	password of reciver
+
+2)  jyala file denar
+	ipconfig
+
+
+
+2) Aws Amplify
+Id :- psudarshan494@gmail.com
+Pass :- Pms$@2002
+
+Github:- Viraj324
+Pass:-sjpv@5555
+
 ## VM 1
 
       username:vagrant
